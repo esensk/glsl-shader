@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "target": "ES5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "typeRoots": ["src/@types"],
+    "lib": ["ES2020", "DOM"]
+  }
+}
