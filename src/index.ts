@@ -20,7 +20,7 @@ const INDEX_DATA: number[] = [
 
 let mouseX: number = 0.5;
 let mouseY: number = 0.5;
-let run: boolean = false;
+let run: boolean = true;
 
 let startTime: number = 0;
 let time: number = 0;
@@ -80,6 +80,10 @@ window.onload = function () {
 }
 
 function render(gl: WebGLRenderingContext, uniformTime: WebGLUniformLocation, uniformMouse: WebGLUniformLocation, unifromResolution: WebGLUniformLocation): void {
+  if (!run) {
+    return;
+  }
+
   time = (new Date().getTime() - startTime) * 0.001;
 
   gl.clear(gl.COLOR_BUFFER_BIT);
