@@ -1,7 +1,6 @@
 import * as glsl from "./glUtil";
-import sampleVert from "./sample.vert";
-import sampleFrag from "./sample.frag";
-import voltexFrag from "./vortex.frag"
+import vert from "./glsl/sample.vert";
+import frag from "./glsl/ray_marching_twist.frag"
 
 const WIDTH: number = 512;
 const HEIGHT: number = 512;
@@ -52,7 +51,7 @@ window.onload = function () {
   }, true);
 
   const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl') as WebGLRenderingContext;
-  const prg = glsl.createProgram(gl, sampleVert, voltexFrag) as WebGLProgram;
+  const prg = glsl.createProgram(gl, vert, frag) as WebGLProgram;
 
   if (!prg) {
     autoRun.checked = false;
